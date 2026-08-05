@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — 7innxsynC Database Manager</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="login.html">VINNXSYNC<span>.</span></a>
+      <div class="nav-links">
+        <a href="#login">Login</a>
+        <a href="#tentang">Tentang</a>
+        <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">Kontak</a>
+        <span class="nav-tag">whatsapp manager</span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+<div class="backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Tutup menu"></button>
+    <div class="drawer-links">
+      <a href="#login">Login</a>
+      <a href="#tentang">Tentang</a>
+      <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">Kontak Admin</a>
+    </div>
+    <p class="drawer-foot">VinnxsynC Database Manager — akses token bot dalam satu tempat.</p>
+  </aside>
+<header class="hero">
+    <span class="deco circle" style="width:22px;height:22px;background:var(--pink);top:30px;right:8%;animation-delay:0.2s;"></span>
+    <span class="deco square" style="width:26px;height:26px;background:var(--yellow);top:120px;right:18%;animation-delay:1.1s;"></span>
+    <span class="deco circle" style="width:16px;height:16px;background:var(--teal);top:70px;right:2%;animation-delay:0.6s;"></span>
+    <div class="container">
+      <div class="pill-row reveal">
+        <span class="pill teal">akses database</span>
+        <span class="pill yellow">satu login</span>
+        <span class="pill pink">terkelola rapi</span>
+      </div>
+      <h1 class="title reveal">Masuk ke <span class="hi">7inxsynC</span><br>Database Manager</h1>
+      <p class="subtitle reveal">Kelola number dan bot token untuk akses bot kamu dalam satu dashboard. Login pakai akun yang sudah didaftarkan admin.</p>
+    </div>
+  </header>
+<section class="section" id="login">
+    <div class="container split">
+
+      <div class="reveal">
+        <h2 style="font-size:22px; font-weight:700; margin-bottom:18px;">Kenapa Pakai Website</h2>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: var(--yellow);">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div>
+              <h3>Login aman</h3>
+              <p>Setiap akun dibuatkan admin, jadi akses token tetap terkontrol.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: var(--teal);">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            </div>
+            <div>
+              <h3>Tambah akses database cepat</h3>
+              <p>Cukup masukkan nomor atau bot token, langsung tersimpan ke database.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: var(--purple);">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"></path></svg>
+            </div>
+            <div>
+              <h3>Kontrol penuh untuk admin</h3>
+              <p>Admin bisa lihat, pantau status, dan hapus token kapan saja.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h2 style="font-size:20px; font-weight:700; margin-bottom:6px;">Form Login</h2>
+        <p class="subtitle" style="margin-bottom:24px; font-size:14px;">Masukkan username dan password akun kamu.</p>
+
+        <form id="loginForm">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" id="loginUsername" placeholder="Masukkan username" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Masukkan password" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="btn primary" id="loginBtn">
+            <span id="loginBtnText">Login</span>
+          </button>
+        </form>
+
+        <div id="loginMessage" class="msg"></div>
+      </div>
+
+    </div>
+  </section>
+<footer class="footer" id="tentang">
+    <div class="container">
+      Belum punya akun? Hubungi <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">@yat1mlau</a> di Telegram untuk didaftarkan.
+      <br><br>
+      © 2026 VinnxsynC — Database Manager
+    </div>
+  </footer>
+
+  <script src="assets/api.js"></script>
+  <script src="assets/session.js"></script>
+  <script src="assets/nav.js"></script>
+  <script>
+    if (getSession()) window.location.href = 'index.html';
+
+    const form = document.getElementById('loginForm');
+    const messageEl = document.getElementById('loginMessage');
+    const btn = document.getElementById('loginBtn');
+    const btnText = document.getElementById('loginBtnText');
+
+    function showMsg(text, type) {
+      messageEl.className = `msg show ${type}`;
+      messageEl.textContent = text;
+    }
+
+    function setLoading(isLoading) {
+      btn.disabled = isLoading;
+      btnText.innerHTML = isLoading ? '<span class="spinner"></span> Memproses...' : 'Login';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+
+      if (!username || !password) {
+        showMsg('Username dan password harus diisi!', 'error');
+        return;
+      }
+
+      setLoading(true);
+      showMsg('Memverifikasi akun...', 'loading');
+
+      try {
+        const user = await findUser(username, password);
+
+        if (!user) {
+          showMsg('Username atau password salah!', 'error');
+          setLoading(false);
+          return;
+        }
+
+        if (!user.isActive) {
+          showMsg('Akun sudah dinonaktifkan!', 'error');
+          setLoading(false);
+          return;
+        }
+
+        saveSession({
+          username: user.username,
+          role: user.role || 'user',
+          userId: user.userId || 'unknown'
+        });
+
+        showMsg('Berhasil masuk, mengalihkan...', 'success');
+        setTimeout(() => { window.location.href = 'index.html'; }, 500);
+
+      } catch (error) {
+        showMsg('Gagal terhubung ke server. Coba lagi.', 'error');
+        console.error(error);
+        setLoading(false);
+      }
+    });
+  </script>
+</body>
+</html>
