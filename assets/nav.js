@@ -1,52 +1,46 @@
-function initNav() {
-  const hamburger = document.getElementById('hamburgerBtn');
-  const drawer = document.getElementById('drawer');
-  const backdrop = document.getElementById('backdrop');
-  const closeBtn = document.getElementById('drawerClose');
+const hamburger = document.getElementById('hamburgerBtn');
+const backdrop = document.getElementById('backdrop');
+const drawer = document.getElementById('drawer');
+const drawerClose = document.getElementById('drawerClose');
 
-  if (!hamburger || !drawer || !backdrop) return;
-
-  function openDrawer() {
-    hamburger.classList.add('open');
-    drawer.classList.add('open');
-    backdrop.classList.add('show');
-  }
-
-  function closeDrawer() {
-    hamburger.classList.remove('open');
-    drawer.classList.remove('open');
-    backdrop.classList.remove('show');
-  }
-
+if (hamburger) {
   hamburger.addEventListener('click', () => {
-    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-  });
-
-  backdrop.addEventListener('click', closeDrawer);
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDrawer();
+    backdrop.classList.add('active');
+    drawer.classList.add('active');
   });
 }
 
-function initReveal() {
-  const items = document.querySelectorAll('.reveal');
-  if (!items.length) return;
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  items.forEach((item) => obs.observe(item));
+if (drawerClose) {
+  drawerClose.addEventListener('click', () => {
+    backdrop.classList.remove('active');
+    drawer.classList.remove('active');
+  });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  initReveal();
+if (backdrop) {
+  backdrop.addEventListener('click', () => {
+    backdrop.classList.remove('active');
+    drawer.classList.remove('active');
+  });
+}
+
+// Close drawer when clicking a link
+document.querySelectorAll('.drawer-item').forEach(link => {
+  link.addEventListener('click', () => {
+    backdrop.classList.remove('active');
+    drawer.classList.remove('active');
+  });
 });
+
+// Scroll reveal animations
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+reveals.forEach(el => observer.observe(el));
