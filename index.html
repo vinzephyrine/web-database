@@ -1,153 +1,137 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard — VinnxsynC Token Manager</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1117" />
+  <title>7innxsynC — Database Manager</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-<nav class="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">VINNXSYNC<span>.</span></a>
-      <div class="nav-links">
-        <a href="index.html">Dashboard</a>
-        <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">Contact</a>
-      </div>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      7innxsynC
+      <span>•</span>
+    </a>
+    
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">Contact</a>
     </div>
+
+    <button class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
-<div class="backdrop" id="backdrop"></div>
+
+  <!-- DRAWER -->
+  <div class="backdrop" id="backdrop"></div>
   <aside class="drawer" id="drawer">
-    <button class="drawer-close" id="drawerClose" aria-label="Tutup menu"></button>
+    <button class="drawer-close" id="drawerClose">✕</button>
     <div class="drawer-links">
-      <div class="drawer-section">
-        <h4 class="drawer-title" style="font-size:12px; text-transform:uppercase; color:var(--ink); opacity:0.5; margin:16px 0 8px 0; padding:0 16px;">Database Number</h4>
-        
-        <a href="whatsapp/add-number.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path d="M10.5 1.5H5.75A2.25 2.25 0 003.5 3.75v12.5A2.25 2.25 0 005.75 18.5h8.5a2.25 2.25 0 002.25-2.25V9M10.5 1.5v4m0-4h4.75M10.5 9.5H7m3.5 2.5H7m3.5 2.5H7"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">Add Number</span>
-        </a>
+      <a href="index.html" class="drawer-item">
+        🏠 Dashboard
+      </a>
 
-        <a href="whatsapp/list-number.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">List Number</span>
-        </a>
+      <a href="https://t.me/yat1mlau" target="_blank" rel="noopener" class="drawer-item">
+        💬 Contact Telegram
+      </a>
 
-        <a href="whatsapp/delete-number.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #ef4444 0%, #f87171 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">Delete Number</span>
-        </a>
-      </div>
-
-      <div class="drawer-section" style="border-top:1px solid var(--light); margin-top:8px; padding-top:8px;">
-        <h4 class="drawer-title" style="font-size:12px; text-transform:uppercase; color:var(--ink); opacity:0.5; margin:8px 0 8px 0; padding:0 16px;">Database Bot Token</h4>
-        
-        <a href="telegram/add-token.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path d="M10.5 1.5H5.75A2.25 2.25 0 003.5 3.75v12.5A2.25 2.25 0 005.75 18.5h8.5a2.25 2.25 0 002.25-2.25V9M10.5 1.5v4m0-4h4.75M10.5 9.5H7m3.5 2.5H7m3.5 2.5H7"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">Add Token</span>
-        </a>
-
-        <a href="telegram/list-token.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">List Token</span>
-        </a>
-
-        <a href="telegram/delete-token.html" class="drawer-item" style="display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:var(--ink); border-left:3px solid transparent; transition:all 0.2s;">
-          <div style="width:32px; height:32px; background:linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; flex-shrink:0;">
-            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px; height:16px;"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-          </div>
-          <span style="font-weight:600; font-size:14px;">Delete Token</span>
-        </a>
-      </div>
-
-      <div style="border-top:1px solid var(--light); margin-top:12px; padding-top:12px;">
-        <button class="linklike danger" onclick="logout()" style="width:100%; padding:12px 16px; text-align:left;">Logout</button>
+      <div style="border-top: 1px solid var(--border-color); margin-top: 16px; padding-top: 16px;">
+        <button class="drawer-item" onclick="logout()" style="color: #f85149;">
+          🚪 Logout
+        </button>
       </div>
     </div>
-    <p class="drawer-foot">7inxsynC Database Manager — kelola database dalam satu tempat.</p>
+    <p class="drawer-foot">7innxsynC Database Manager — kelola database dalam satu tempat.</p>
   </aside>
-<header class="hero">
-    <span class="deco circle" style="width:22px;height:22px;background:var(--teal);top:30px;right:8%;animation-delay:0.2s;"></span>
-    <span class="deco square" style="width:26px;height:26px;background:var(--pink);top:120px;right:18%;animation-delay:1.1s;"></span>
-    <span class="deco circle" style="width:16px;height:16px;background:var(--yellow);top:70px;right:2%;animation-delay:0.6s;"></span>
-    <div class="container">
-      <div class="pill-row reveal">
-        <span class="pill teal">dashboard</span>
-        <span class="pill">akses database</span>
-      </div>
-      <h1 class="title reveal">Kelola <span class="hi">database</span> akses bot</h1>
-      <p class="subtitle reveal">Pilih menu di bawah untuk mengelola database bot dan akun.</p>
-    </div>
-  </header>
 
+  <!-- MAIN CONTENT -->
   <section class="section">
     <div class="container">
-      <div class="topbar reveal">
-        <span class="who">Masuk sebagai <b id="userDisplay">...</b></span>
-        <span class="pill purple" id="roleDisplay">role</span>
+      <!-- HERO -->
+      <div class="hero reveal">
+        <h1>Dashboard</h1>
+        <p id="userDisplay" style="font-size: 18px; margin-top: 8px; color: var(--accent-cyan);">Masuk sebagai <span id="roleDisplay" style="color: var(--text-main); font-family: 'TzX', sans-serif; font-weight: 700;">USER</span></p>
       </div>
 
+      <!-- MENU GRID -->
       <div class="menu-grid reveal">
-        <a href="database/add-user.html" class="menu-card hidden" id="addUserCard">
+        <!-- ADMIN MENU -->
+        <a href="add-user.html" class="menu-card hidden" id="addUserCard">
           <div class="menu-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:#fff;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
+            👤
           </div>
           <h3>Add User</h3>
           <p>Buat akun baru dengan username dan password.</p>
         </a>
 
-        <a href="database/list-user.html" class="menu-card hidden" id="listUserCard">
+        <a href="list-user.html" class="menu-card hidden" id="listUserCard">
           <div class="menu-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:#fff;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            👥
           </div>
           <h3>List User</h3>
           <p>Lihat daftar semua user yang terdaftar.</p>
         </a>
 
-        <a href="database/delete-user.html" class="menu-card hidden" id="deleteUserCard">
+        <a href="delete-user.html" class="menu-card hidden" id="deleteUserCard">
           <div class="menu-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color:#fff;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H3m3 0v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4m-9 5v6m4-6v6"></path></svg>
+            🗑️
           </div>
           <h3>Delete User</h3>
           <p>Hapus akun user dari database.</p>
+        </a>
+
+        <!-- USER MENU -->
+        <a href="add-number.html" class="menu-card hidden" id="addNumberCard">
+          <div class="menu-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); color:#fff;">
+            ➕
+          </div>
+          <h3>Add Number</h3>
+          <p>Tambahkan nomor WhatsApp ke database.</p>
+        </a>
+
+        <a href="add-token.html" class="menu-card hidden" id="addTokenCard">
+          <div class="menu-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color:#fff;">
+            🔑
+          </div>
+          <h3>Add Token</h3>
+          <p>Tambahkan bot token ke database.</p>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      © 2026 <a href="https://t.me/yat1mlau" target="_blank" rel="noopener">VinnxsynC</a> — Database Manager
-    </div>
+    <p>© 2026 <strong>7innxsynC</strong> — Database Manager</p>
+    <p style="font-size: 12px; color: var(--text-muted);">Powered by <a href="#">7innxsynC</a></p>
   </footer>
 
-  <script src="assets/api.js"></script>
+  <!-- SCRIPTS -->
   <script src="assets/session.js"></script>
   <script src="assets/nav.js"></script>
+  
   <script>
     const currentUser = requireLogin();
 
     if (currentUser) {
-      document.getElementById('userDisplay').textContent = currentUser.username;
-      document.getElementById('roleDisplay').textContent = currentUser.role.toUpperCase();
+      document.getElementById('userDisplay').innerHTML = `Masuk sebagai <span id="roleDisplay" style="color: var(--text-main); font-family: 'TzX', sans-serif; font-weight: 700;">${currentUser.role.toUpperCase()}</span>`;
 
-      ['addUserCard', 'listUserCard', 'deleteUserCard'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.remove('hidden');
-      });
+      if (currentUser.role === 'admin') {
+        ['addUserCard', 'listUserCard', 'deleteUserCard'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('hidden');
+        });
+      } else if (currentUser.role === 'user') {
+        ['addNumberCard', 'addTokenCard'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('hidden');
+        });
+      }
     }
   </script>
 </body>
